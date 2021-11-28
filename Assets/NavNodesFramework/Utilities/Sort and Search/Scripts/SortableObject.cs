@@ -8,8 +8,14 @@ namespace NavNodesFramework.Utilities
     [RequireComponent(typeof(MeshRenderer))]
     public class SortableObject : MonoBehaviour
     {
+        /// <summary>
+        /// the value by which sortable objects are sorted
+        /// </summary>
         public float value;
 
+        /// <summary>
+        /// the settable material of this sortableObject's meshrenderer
+        /// </summary>
         public Material Mat
         {
             set
@@ -22,11 +28,13 @@ namespace NavNodesFramework.Utilities
 
         public void Awake()
         {
+            //initialize the meshrenderer of this SortableObject
             meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void FixedUpdate()
         {
+            //update the position of this sortable object to match the value.
             transform.position = new Vector3(transform.position.x, value, transform.position.z);
         }
     }
