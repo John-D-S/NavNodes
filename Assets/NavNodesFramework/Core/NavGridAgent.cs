@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace NavNodesFramework.Core
 {
-	
 	public class NavGridAgent : MonoBehaviour
 	{
 		[SerializeField, Tooltip("The NavGrid this Agent is using.")] 
